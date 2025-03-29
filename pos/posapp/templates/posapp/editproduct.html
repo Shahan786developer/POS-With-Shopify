@@ -1,0 +1,216 @@
+{% extends "posapp/dablock.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Edit</h4>
+<h6>Update your product</h6>
+      
+{% if form.non_field_errors %}
+<div class="alert alert-danger mt-4 ">
+    {{ form.non_field_errors }}
+</div>
+{% endif %}
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<div class="row">
+    
+<div class="col-lg-3 col-sm-6 col-12">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<div class="form-group">
+   
+
+
+       
+<label>Product Name</label>
+
+<input class="form-control" type="text" name="name" value = {{form.name.value}} >
+<p class="text-danger">{{ form.name.errors.0 }}</p>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Category</label>
+<select class="form-select" name="category">
+    {% for category in categories %}
+        <option value="{{ category.id }}" {% if category.id == form.category.value %}selected{% endif %}>
+            {{ category.name }}
+        </option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Sub Category</label>
+<select class="form-select" name="subcategory">
+    <option value="" {% if form.subcategory.value == "" %}selected{% endif %}>Select</option>
+    {% for subcategory in subcategories %}
+        <option value="{{ subcategory.id }}" 
+            {% if subcategory.id == form.subcategory.value %}selected{% endif %}>
+            {{ subcategory.subcategory_name }}
+        </option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Brand</label>
+<select class="form-select" name="brand">
+    <option value="" {% if form.brand.value == "" %}selected{% endif %}>Select</option>
+    {% for category in brands %}
+        <option value="{{ category.id }}" 
+         
+        {% if category.id == form.brand.value %}selected{% endif %}>
+            {{ category.name }}
+        </option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+    <label>Unit</label>
+    <select class="form-select" name="unit">
+        {% for category in units %}
+            <option value="{{ category.0 }}" {% if category.0 == form.cleaned_data.unit %}selected{% endif %}>
+                {{ category.1 }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>SKU</label>
+<input type="text" name="sku" value={{form.sku.value}}>
+<p class="text-danger">{{ form.sku.errors.0 }}</p>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Minimum Qty</label>
+<input type="text" name="min_qty" value={{form.min_qty.value}}>
+<p class="text-danger">{{ form.min_qty.errors.0 }}</p>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Quantity</label>
+<input type="text" name="quantity" value={{form.quantity.value}}>
+<p class="text-danger">{{ form.quantity.errors.0 }}</p>
+</div>
+
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<label>Description</label>
+<textarea class="form-control" name="description">{{ form.description.value }}</textarea>
+<p class="text-danger">{{ form.description.errors.0 }}</p>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Tax</label>
+<select class="form-select" name="tax">
+    {% for category in taxes %}
+    <option value="" {% if form.tax.value == "" %}selected{% endif %}>Select</option>
+        <option value="{{ category.id }}" {% if category.id == form.tax.value %}selected{% endif %}>
+            {{ category.name }} {{ category.rate }}%
+        </option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Discount Type</label>
+<select class="form-select" name="discount_type">
+    <option value="" {% if form.discount_type.value == "" %}selected{% endif %}>Select</option>
+    {% for category in discounts %}
+        <option value="{{ category.id }}" {% if category.id == form.discount_type.value %}selected{% endif %}>
+            {{ category.name }} {{ category.rate }}%
+        </option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+<label>Price</label>
+<input type="text" name="price" value={{form.price.value}}>
+<p class="text-danger">{{ form.price.errors.0 }}</p>
+</div>
+</div>
+<div class="col-lg-3 col-sm-6 col-12">
+<div class="form-group">
+    <label>Status</label>
+    <select class="form-select" name="status">
+        {% for category in status %}
+            <option value="{{ category.0 }}" {% if category.0 == form.cleaned_data.status %}selected{% endif %}>
+                {{ category.1 }}
+            </option>
+        {% endfor %}
+    </select>
+    
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<label> Product Image</label>
+<div class="image-upload">
+<input type="file" name="product_image" value="{{image_url}}">
+<div class="image-uploads">
+    <img src="{% static 'assets/img/icons/upload.svg' %}" alt="img">
+<h4>Drag and drop a file to upload</h4>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12">
+<div class="product-list">
+<ul class="row">
+<li>
+  
+<div class="productviews">
+<div class="productviewsimg">
+   
+  <img src= "{{ image_url }}"  alt="">
+</div>
+<div class="productviewscontent">
+<div class="productviewsname">
+<h2>macbookpro.jpg</h2>
+<h3>581kb</h3>
+</div>
+<a href="javascript:void(0);" class="hideset">x</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-12">
+    <button type="submit" class="btn btn-submit me-2">Update</button>
+<a href="{% url 'productlist' %}" class="btn btn-cancel">Cancel</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+{% endblock content %}

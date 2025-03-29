@@ -1,0 +1,218 @@
+{% extends "posapp/dablock.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Tax Rates</h4>
+<h6>Manage Tax Rates</h6>
+</div>
+<div class="page-btn">
+    <a class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addpayment">
+        <img src="{% static 'assets/img/icons/plus.svg' %}" alt="img" class="me-1">Add New Tax Rates
+    </a>
+</div></div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-top">
+            <div class="search-set">
+                <div class="search-input">
+                    <a class="btn btn-searchset">
+                        <img src="{% static 'assets/img/icons/search-white.svg' %}" alt="img">
+                    </a>
+                </div>
+            </div>
+            <div class="wordset">
+                <ul>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf">
+                            <img src="{% static 'assets/img/icons/pdf.svg' %}" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel">
+                            <img src="{% static 'assets/img/icons/excel.svg' %}" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print">
+                            <img src="{% static 'assets/img/icons/printer.svg' %}" alt="img">
+                        </a>
+                    </li>
+                </ul>
+</ul>
+</div>
+</div>
+<div class="table-responsive">
+<table class="table  datanew">
+<thead>
+<tr>
+<th>
+<label class="checkboxs">
+<input type="checkbox">
+<span class="checkmarks"></span>
+</label>
+</th>
+<th>Tax name</th>
+<th>Tax (%)</th>
+<th>Status</th>
+<th class="text-end">Action</th>
+</tr>
+</thead>
+<tbody>
+    {% for tax in taxes %}
+    <tr>
+        <td>
+            <label class="checkboxs">
+                <input type="checkbox">
+                <span class="checkmarks"></span>
+            </label>
+        </td>
+        <td>{{ tax.name }}</td>
+        <td>{{ tax.rate }}</td>
+        <td>
+            <div class="status-toggle d-flex justify-content-between align-items-center">
+                <input type="checkbox" id="user{{ forloop.counter }}" class="check" {% if tax.status == 'Active' %}checked{% endif %}>
+                <label for="user{{ forloop.counter }}" class="checktoggle">checkbox</label>
+            </div>
+        </td>
+        <td class="text-end">
+            <a class="me-3" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#editpayment{{ tax.id }}">                <img src="{% static 'assets/img/icons/edit.svg' %}" alt="img">
+            </a>
+            <a class="me-3 confirm-text" href="javascript:void(0);">
+                <img src="{% static 'assets/img/icons/delete.svg' %}" alt="img">
+            </a>
+        </td>
+    </tr>
+    
+    <div class="modal fade" id="editpayment{{ tax.id }}" tabindex="-1" role="dialog" aria-hidden="true">        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <form method="post" action="{% url 'update_taxrate' tax.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+            <h5 class="modal-title">Edit Tax</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Tax Name<span class="manitory">*</span></label>
+                        <input type="text" value="{{ tax.name }}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Tax Rate(%)<span class="manitory">*</span></label>
+                        <input type="text" value="{{ tax.rate }}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group mb-0">
+                        <label>Status</label>
+                        <select class="select">
+                            <option {% if tax.status == 'Active' %}selected{% endif %}>Active</option>
+                            <option {% if tax.status == 'Inactive' %}selected{% endif %}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-submit me-2">Update</button>
+            <a href="{% url 'productlist' %}" class="btn btn-cancel">Cancel</a>
+            </div>
+            </form>
+        </div>
+        </div>
+
+        </div>
+    {% endfor %}
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="addpayment" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Add TAX </h5>
+<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+    <form method="post">
+        {% csrf_token %}
+<div class="row">
+<div class="col-12">
+<div class="form-group">
+    <label>Tax Name<span class="mandatory">*</span></label>
+    <input type="text" name="name" class="form-control">
+</div>
+<p class="text-danger">                                            
+    {{ form.name.errors.0}}
+
+</p>
+</div>
+<div class="col-12">
+<div class="form-group">
+    <label>Tax Rate(%)<span class="mandatory">*</span></label>
+    <input type="text" name="rate" class="form-control">
+</div>
+
+<p class="text-danger">{{ form.rate.errors.0}}</p> 
+</div>
+
+<div class="col-12">
+<div class="form-group mb-0">
+<label>Status</label>
+
+<select class="select" name="status">
+    <option value="">Choose Status</option>
+    <option value="Active">Active</option>
+    <option value="Closed">Closed</option>
+</select>
+</div>
+<p class="text-danger">                                            
+                                {{ form.status.errors.0}}
+
+                            </p>
+
+
+</div>
+</div>
+
+</div>
+<div class="modal-footer">
+<button type="submit" class="btn btn-submit">Confirm</button>
+</form>
+<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+{% endblock content  %}

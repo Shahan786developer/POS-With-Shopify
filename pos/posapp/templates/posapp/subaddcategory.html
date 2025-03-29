@@ -1,0 +1,79 @@
+{% extends "posapp/dablock.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Product Add Subcategory</h4>
+                <h6>Create new Subcategory</h6>
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger mt-4 ">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form method="post" action="{% url 'subaddcategory' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Parent Category</label>
+                                <select class="select" name="parent_category">
+                                    <option value="" selected>Choose Category</option>
+                                    {% for category in categories %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                    {% endfor %}
+                                </select>
+                    {{ form.name.errors.0}}
+                            
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" name="subcategory_name">
+                            </div>
+                    {{ form.subcategory_name.errors.0}}
+
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Category Code</label>
+                                <input type="text" name="code">
+                            </div>
+                    {{ form.code.errors.0}}
+
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" name="description"></textarea>
+                            </div>
+                    {{ form.description.errors.0}}
+
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-submit me-2">Submit</button>
+                            <a href="'subcategory_list' %}" class="btn btn-cancel">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

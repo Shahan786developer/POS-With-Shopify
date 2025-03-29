@@ -1,0 +1,547 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Systemic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets-logout/img/favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'assets-logout/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-logout/css/style.css' %}">
+    <style>
+        .F_S_H {
+            background: #f4f2fc !important;
+            box-shadow: 0 0 3px #dddddd;
+        }
+    </style>
+</head>
+
+   <body data-bs-spy="scroll">
+       
+    
+    <div id="preloader-active">
+        <div class="whirly-loader"> </div>
+    </div>
+    
+    <header>
+
+        <div class="header-area">
+            <div class="main-header header-fixed">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-xl-2 col-lg-2 col-md-2" style="padding: 0;">
+                            <div class="logo">
+                                <a href="#HOME"><img src="{% static 'assets-logout/img/logo/logo.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li class="active"><a href="{% url 'index' %}"> Home</a></li>
+                                        <li><a href=" url 'services' %}">Services</a></li>
+                                        <li><a href="#APP">Download APP</a></li>
+                                        <li><a href="#">Products</a>
+                                            <ul class="submenu">
+                                                <li><a href="#features">Feature</a></li>
+                                                <li><a href="">Omnichannel</a></li>
+                                                <li><a href="">Product</a></li>
+                                                <li><a href="">Order</a></li>
+                                                <li><a href="">Inventory & Purchase</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                        <li><a href="{% url 'login' %}">SIGN/SIGNUP</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        
+        <div class="slider-area" id="HOME">
+            <div class="slider-active">
+                <div class="single-slider slider-height sky-blue d-flex align-items-center">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-lg-6 col-md-9 h-100">
+                                <div class="hero__caption">
+                                 
+                                    <h1 data-animation="fadeInUp" data-delay=".6s">Systemic<br>Point of sale</h1>
+                                    <p class="text-light" data-animation="fadeInUp" data-delay=".8s">Our main aim is to provide online sellers, and businesses with a unified platform to streamline their operations and increase efficiency.</p>
+                                    
+                                   <div class="slider-btns">
+                                        
+                                        <a data-animation="fadeInLeft" data-delay="1.0s" href="" class="btn radius-btn">LOGIN/REGISTER</a>
+                                      
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 h-100">
+                                <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
+                                    <img src="{% static 'assets-logout/img/div_background/hero_right.png' %}"style=" width:100%; alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="single-slider slider-height slider-padding sky-blue d-flex align-items-center">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-lg-6 col-md-9 ">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInUp" data-delay=".4s">App Landing Page</span>
+                                    <h1 data-animation="fadeInUp" data-delay=".6s">Get things done<br>with Appco</h1>
+                                    <p data-animation="fadeInUp" data-delay=".8s">Dorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusm tempor incididunt ulabore et dolore magna aliqua.</p>
+                                    
+                                   <div class="slider-btns">
+                                        
+                                        <a data-animation="fadeInLeft" data-delay="1.0s" href="industries.html" class="btn radius-btn">Download</a>
+                                        
+                                        <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn ani-btn" href="https://www.youtube.com/watch?v=1aP-TXUpNoU"><i class="fas fa-play"></i></a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero__img d-none d-lg-block f-right" data-animation="fadeInRight" data-delay="1s">
+                                    <img src="{% static 'assets-logout/img/div_background/hero_right.png' %}" style="width:100%;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+        
+        <section class="best-features-area section-padd4" id="features">
+            <div class="container" >
+                <div class="row justify-content-end">
+                    <div class="col-xl-12 col-lg-12">
+                        
+                        <div class="row">
+                            <div class="col-lg-10 col-md-10">
+                                <div class="section-tittle">
+                                    <h2>Some of the best features</h2>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-features mb-70">
+                                    <div class="features-icon">
+                                        <span class="flaticon-support"></span>
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>Customized Shipping Label</h3>
+                                        <p>You can customize the template of shipping labels and picking lists according to your need</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-features mb-70">
+                                    <div class="features-icon">
+                                        <span class="flaticon-support"></span>
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>Batch Order Processing</h3>
+                                        <p>Centralize orders across multiple sales channels, streamline order fulfillment process</p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-features mb-70">
+                                    <div class="features-icon">
+                                        <span class="flaticon-support"></span>
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>Scrape & Copy Products</h3>
+                                        <p>Scrape and copy product listings to your shops with one click</p>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="single-features mb-70">
+                                    <div class="features-icon">
+                                        <span class="flaticon-support"></span>
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>Advanced Report and Analysis</h3>
+                                        <p>Help you to get real-time insights into your online marketing and sales activities and gives you an advantage over competitors</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </section>
+        
+        
+        <section class="service-area sky-blue section-padding2">
+            <div class="container">
+                
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-tittle text-center text-light">
+                            <h2 style="font-size: 45px; color: aliceblue;">Ecommerce Operations<br>to<br>Make Business Easier</h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 my-1">
+                        <div class="services-caption text-center mb-30" style="
+                        height: 100%;
+                    ">
+                            <div class="service-icon">
+                                <span class="flaticon F_S_H">
+                                    <img src="https://www.bigseller.com/static/images/bk/product.png" alt="">
+                                </span>
+                            </div> 
+                            <div class="service-cap">
+                                <h4><a href="#">Product management</a></h4>
+                                <p style="color: aliceblue;">Provide multiple product management tools to improve efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 my-1">
+                        <div class="services-caption text-center mb-30" style="
+                        height: 100%;
+                    ">
+                            <div class="service-icon">
+                                <span class="flaticon F_S_H">
+                                    <img src="https://www.bigseller.com/static/images/bk/stock.png">
+                                </span>
+                            </div> 
+                            <div class="service-cap">
+                                <h4><a href="#">Centralized hub</a></h4>
+                                <p style="color: aliceblue;">Centralized inventory across multiple channels, ensuring the accuracy of sellable stock, and preventing overselling and underselling</p>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xl-4 col-lg-4 col-md-6 my-1">
+                        <div class="services-caption text-center mb-30" style="
+                        height: 100%;
+                    ">
+                            <div class="service-icon">
+                                <span class="flaticon F_S_H">
+                                    <img src="https://www.bigseller.com/static/images/bk/data.png">
+                                </span>
+                            </div> 
+                            <div class="service-cap">
+                                <h4><a href="#">Keep tracking</a></h4>
+                                <p style="color: aliceblue;">Keep track of product, inventory and store performance, and unleash the potential of your online sales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="applic-apps section-padding2" style="padding-bottom: 50px;">
+            <div class="container-fluid">
+                <div class="section-tittle text-center">
+                    <h2 style="font-size: 45px;">We're Here for Your Business</h2>
+                </div>
+                <div class="container text-center mx-auto row">
+                   
+                        <div class="col-12 col-sm-6 col-md-3 h-100">
+                            <img src="https://www.bigseller.com/static/images/bk/service.png">
+                            <br><br>
+                            <h4>Customer Support</h4>
+                            <p>Personalized, and professional Customer Service to ensure your business productivity</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 h-100">
+                            <img src="https://www.bigseller.com/static/images/bk/experience.png">
+                            <br><br>
+                            <h4>Rich Experience</h4>
+                            <p>We are an eCommerce solution provider with 8 more years of experience</p>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-3 h-100">
+                            <img src="https://www.bigseller.com/static/images/bk/encryption.png">
+                            <br><br>
+                            <h4>Encryption Technology</h4>
+                            <p>Secure Sockets Layer (SSL) has been used to ensure that your connection with Systemic is secure</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 h-100">
+                            <img src="https://www.bigseller.com/static/images/bk/cloud.png">
+                            <br><br>
+                            <h4>Secure Cloud Service</h4>
+                            <p>We are using the most secure cloud storage service</p>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+  
+      
+        
+        
+        <div class="our-customer section-padd-top30" id="Reviews">
+            <div class="container-fluid">
+            <div class="our-customer-wrapper">
+                    
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="section-tittle text-center">
+                                <h2 style="margin-bottom: 7px;">What Our Customers<br> Have to Say</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="customar-active dot-style d-flex dot-style">
+                                <div class="single-customer mb-100">
+                                    <div class="what-img">
+                                        <img src="{% static 'assets-logout\img\shape\unknown.png' %}" alt="">
+                                    </div>
+                                    <div class="what-cap">
+                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                        <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="single-customer mb-100">
+                                    <div class="what-img">
+                                        <img src="{% static 'assets-logout\img\shape\unknown.png' %}" alt="">
+                                     
+                                     
+
+                                    </div>
+                                    <div class="what-cap">
+                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                        <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="single-customer mb-100">
+                                    <div class="what-img">
+                                        <img src="{% static 'assets-logout\img\shape\unknown.png' %}" alt="">
+
+
+                                    </div>
+                                    <div class="what-cap">
+                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                        <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="single-customer mb-100">
+                                    <div class="what-img">
+                                        <img src="{% static 'assets-logout\img\shape\unknown.png' %}" alt="">
+
+
+                                    </div>
+                                    <div class="what-cap">
+                                        <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                        <p>Utenim ad minim veniam quisnostrud exercitation ullamcolabor nisiut aliquip ex ea commodo consequat duis aute irure dolor in represse.</p>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>           
+        
+        
+        <div class="available-app-area" id="APP">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="app-caption">
+                            <div class="section-tittle section-tittle3">
+                                <h2>Our App Available For Any Device Download now</h2>
+                                <p>Carry your mobile phone with you, handle business anytime and anywhere</p>
+                                <div class="app-btn">
+                                    <a href="#" class="app-btn1"> <img src="{% static 'assets-logout\img\shape\app_btn1.png' %}" alt=""></a>
+
+                                    <a href="#" class="app-btn2"><img src="{% static 'assets-logout\img\shape\app_btn2.png' %}" alt=""></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="app-img">
+                            <img src="{% static 'assets-logout\img\shape\available-app.png' %}" alt="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="app-shape">
+                <img src="{% static 'assets-logout\img\shape\app-shape-top.png' %}" alt=""class="app-shape-top heartbeat d-none d-lg-block">
+                <img src="{% static 'assets-logout\img\shape\app-shape-top.png' %}" alt=""      class="app-shape-left d-none d-xl-block">
+                 -->
+            </div>
+        </div>
+        
+        
+                <div class="Footer-CONT align-items-center mx-auto pt-90 pb-90">
+                  
+                     <div class="say-something-cap text-center">
+                            <h2 style="font-weight: bold; color: aliceblue;">Say Hello!<br>To<br>The Collaboration Hub.</h2>
+                     </div>
+                     <br>
+                     <div class="say-btn text-center">
+                            <a href="contact.html" class="btn radius-btn">Contact Us</a>
+                     </div>
+                    
+                </div>
+            
+        
+     
+    </main>
+   <footer style="background: none;">
+
+       
+      <div class="footer-main">
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row  justify-content-between">
+                    <div class="col-lg-3 col-md-4 col-sm-8">
+                         <div class="single-footer-caption mb-30">
+                              
+                             <div class="footer-logo">
+                                <a href="index.html"> <img src="{% static 'assets-logout\img\logo\logo2_footer.png' %}" alt="">
+                                </a>
+                             </div>
+                             <div class="footer-tittle">
+                                 <div class="footer-pera">
+                                     <p class="info1">A comprehensive POS and e-commerce system with a wide range of features to provide online sellers & businesses with a solution to streamline their operations & increase efficiency.</p>
+                                </div>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#features">Features</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#APP">Download</a></li>
+                                    <li><a href="#Reviews">Reviews</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="#">Report a bug</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Newsletter</h4>
+                                <div class="footer-pera footer-pera2">
+                                 <p>Subscribe to us to receive updates about Systemic.com at your email . You can unsubscribe at any time.</p>
+                             </div>
+                             
+                             <div class="footer-form">
+                                 <div id="mc_embed_signup">
+                                     <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                         <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                         <div class="form-icon">
+                                             <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">                                        <img src="{% static 'assets-logout\img\shape\form_icon.png' %}" alt="">
+                                             </button>
+                                         </div>
+                                         <div class="mt-10 info"></div>
+                                     </form>
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+      </div>
+       
+
+   </footer>
+   
+	
+	
+		
+   <script src="{% static 'assets-logout/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/vendor/jquery-1.12.4.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/popper.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/bootstrap.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/jquery.slicknav.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/slick.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/gijgo.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/wow.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/animated.headline.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.magnific-popup.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/jquery.scrollUp.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.nice-select.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.sticky.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/contact.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.form.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.validate.min.js' %}"></script>
+   <script src="{% static 'assets-logout/js/mail-script.js' %}"></script>
+   <script src="{% static 'assets-logout/js/jquery.ajaxchimp.min.js' %}"></script>
+
+   <script src="{% static 'assets-logout/js/plugins.js' %}"></script>
+   <script src="{% static 'assets-logout/js/main.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+{% extends "posapp/dablock.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Brand ADD</h4>
+<h6>Create new Brand</h6>
+</div>
+</div>
+
+<!-- brand_form.html -->
+<div class="card">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}">Brand Name</label>
+                        {{ form.name }}
+                    </div>
+                    <p class="text-danger">                                            
+                        {{ form.name.errors.0}}
+
+                    </p>
+                    
+                </div>
+                
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="{{ form.description.id_for_label }}">Description</label>
+                        {{ form.description }}
+                    </div>
+                    <p class="text-danger">                                            
+                        {{ form.description.errors.0}}
+
+                    </p>
+                    
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="{{ form.brand_image.id_for_label }}">Product Image</label>
+                        {{ form.brand_image }}
+                    </div>
+                    <p class="text-danger">                                            
+                        {{ form.brand_image.errors.0}}
+
+                    </p>
+                    
+
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-submit me-2">Submit</button>
+                <a href="{% url 'brandlist' %}" class="btn btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</div>
+</div>
+
+
+{% endblock content %}
